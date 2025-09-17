@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="wiewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio javascript</title>
+    <style>
+        .nascondi{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p id="messaggio">Stiamo imparando le basi di javascript</p>
+    <button onclick="toggleVisibilità()">Mostra/Nascondi messaggio</button>
+
+    <script>
+        function toggleVisibilità(){
+            var messaggio=document.getElementById("messaggio");
+            messaggio.classList.add("nascondi");
+        }
+        /*
+        
+        */
+
+    </script>
+</body>
+</html>

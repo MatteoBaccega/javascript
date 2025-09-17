@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="wiewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio javascript</title>
+    <style>
+        .colore{
+            color:red;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titolo">Ciao mondo</h1>
+    <button onclick="cambiaTesto()">Cliccami!</button>
+
+    <script>
+        function cambiaTesto(){
+            var titolo=document.getElementById("titolo");
+            titolo.textContent="Testo cambiato!";
+            titolo.classList.add("colore");
+        }
+        /*
+        Spiegazione:
+        Inizialmente dò un identità al titolo ciao mondo(id),
+        poi si crea un bottonne e al click usa la funzione cambia testo
+        che al suo interno prende in riferimento l'identità e cambia la parola
+         dandogli anche uno stile diverso gia preinpostato nello style
+        */
+
+    </script>
+</body>
+</html>
