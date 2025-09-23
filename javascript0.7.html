@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esempio di Ciclo For Semplice</title>
+</head>
+<body>
+  <h1>Numeri da 1 a 10</h1>
+  <ul id="listaNumeri"></ul>
+
+  <script>
+    // Selezioniamo l'elemento ul
+    var listaNumeri = document.getElementById("listaNumeri");
+
+    // Ciclo for per visualizzare i numeri da 1 a 10
+    for (var i = 1; i <= 10; i++) {
+      // Creiamo un nuovo elemento li
+      var listItem = document.createElement("li");
+
+      // Impostiamo il testo dell'elemento li
+      listItem.textContent = "Numero: " + i;
+
+      // Aggiungiamo l'elemento li alla lista ul
+      listaNumeri.appendChild(listItem);
+    }
+    //questo codice ci permette di scrivere i numeri da 1 a 10 utilizzando un ciclo for nello script e utilizzando i comandi gia usati in precedenza
+  </script>
+</body>
+</html>
