@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambio Colore di Sfondo</title>
+</head>
+<body>
+  <button onclick="cambiaColore()">Cambia Colore di Sfondo</button>
+
+  <script>
+    function cambiaColore() {
+      var colori = ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#A133FF"];
+      var coloreCasuale = colori[Math.floor(Math.random() * colori.length)];
+      document.body.style.backgroundColor = coloreCasuale;
+    }
+    /*
+        il codice  ci permette di cambiare il colore di sfondo in modo casuale utilizzando numeri casuali arrotondandoli e prelevando il codice del colore
+        dalla lista
+        */
+  </script>
+</body>
+</html>
