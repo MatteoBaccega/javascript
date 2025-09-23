@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="wiewport" content="width=device-whidth, initial scale=1.0">
+    <title>Cambio immagine</title>
+</head>
+<body>
+    <img id="immagine" src="/immagini/immagine1.jpg" alt="Immagine">
+    <button onclick="cambiaImmagine()">Cambia Immagine</button>
+
+    <script>
+        function cambiaImmagine() {
+            var immagine=document.getElementById("immagine");
+            console.log(immagine.src)
+            if(immagine.src.includes("immagini/immagine1.jpg")){
+                immagine.src="/immagini/immagine2.jpg";
+            }else{
+               immagine.src="/immagini/immagine1.jpg"; 
+            }
+        }
+        /*
+        il codice ci permette di cambiare un immagine utilizzando nello script una semplice condizione 
+        */
+    </script>
+    
+</body>
+</html>
