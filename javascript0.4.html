@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="wiewport" content="width=device-whidth, initial scale=1.0">
+    <title>Aggiungere elementi alla lista</title>
+</head>
+<body>
+    <ul id="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+    </ul>
+    <button onclick="aggiungiElemento()">Aggiungi elemento</button>
+
+    <script>
+        function aggiungiElemento() {
+            var lista=document.getElementById("lista");
+            var nuovoElemento=document.createElement("li");
+            nuovoElemento.textContent="Nuovo Elemento";
+            lista.appendChild(nuovoElemento);
+        }
+        /*
+        il codice  ci permette di aggiungere elementi a una lista infatti iniziamo creando una lista con elementi poi aggiungiamo
+        un bottone che se schiacciato usa le proprietà dello script aggiungiElemento che ci collega alla lista la quale gli abbbiamo dato
+        un id lista precedentemente, crea una nuova riga e infine ci scrive dentro il nuovo elemento tramite lista.appendChild
+        */
+    </script>
+    
+</body>
+</html>
