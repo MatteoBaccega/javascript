@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validazione Form</title>
+</head>
+<body>
+  <form id="mioForm" onsubmit="return validaForm()">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome">
+    <button type="submit">Invia</button>
+  </form>
+
+  <p id="errore" style="color: red;"></p>
+
+  <script>
+    function validaForm() {
+      var nome = document.getElementById("nome").value;
+      var errore = document.getElementById("errore");
+
+      if (nome === "") {
+        errore.textContent = "Il nome non può essere vuoto";
+        return false;
+      } else {
+        errore.textContent = "";
+        return true;
+      }
+    }
+    /*Il codice ci permette di inserire dati e inviarli al server per poi sviluppando il codice utilizzarli
+    inoltre se non scrivi niente non ti valida e quindi esce il messaggio che non si può scrivere il vuoto
+    */
+  </script>
+</body>
+</html>
+
+
