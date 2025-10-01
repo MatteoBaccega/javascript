@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Variabile locale+iife</title>
+</head>
+<body>
+
+    <script>
+        let messaggio="globale";
+        function mostraMessaggio(){
+            let messaggio='gerevini';
+            console.log(messaggio);//messaggio locale
+        }
+        mostraMessaggio();
+        console.log(messaggio);//messaggioglobale
+        (function(){
+            let segreto="12345";
+            console.log(segreto);//stampa segreto
+        })();
+        console.log(segreto);// da errore perche segreto non è definito
+    </script>
+</body>
+</html>
