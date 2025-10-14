@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Le 4 operazioni</title>
+</head>
+<body>
+
+    <script>
+      var operazione=arguments[0];
+      var parametri=[];
+      var result=0;
+      for(var i=1;i<arguments.length;i++){
+        switch(operazione){
+            case '+':
+                result+=arguments[i];//sommiamo per il primo numero e lo stesso vale anche per gli altri e poi sommiamo per i numeri dopo
+                break;
+            case '-':
+                result-=arguments[i];
+                break;
+            case '*':
+                result*=arguments[i];
+                break;
+            case '/':
+                result/=arguments[i];
+                break;
+            default:
+                resault=0;
+
+        }
+        return result;
+
+      }
+
+    </script>
+</body>
+</html>
