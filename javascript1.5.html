@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Azzecca e azzera</title>
+</head>
+<body>
+
+    <script>
+      // Inserimento degli incassi per la prima settimana
+let incassi1 = [];
+for (let i = 0; i < 7; i++) {
+    incassi1.push(parseFloat(prompt(`Incasso giorno ${i + 1}:`)));
+}
+
+// Copia "non indipendente"  modifica entrambi
+let incassi2 = incassi1;
+incassi2[0] *= 0.9;
+incassi2[6] *= 0.9;
+
+console.log("incassi1:", incassi1);
+console.log("incassi2 (modificato):", incassi2);
+
+// Media
+const media = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
+console.log("Media incassi1:", media(incassi1).toFixed(2));
+console.log("Media incassi2:", media(incassi2).toFixed(2));
+
+console.log(" incassi1 e incassi2 sono lo stesso array, quindi entrambi risultano modificati!");
+
+// Copia "indipendente" con spread
+let incassi3 = [...incassi1];
+incassi3[0] *= 0.9;
+incassi3[6] *= 0.9;
+
+console.log("incassi1 (dopo spread):", incassi1);
+console.log("incassi3 (con modifiche):", incassi3);
+console.log("Media incassi3:", media(incassi3).toFixed(2));
+
+console.log(" incassi3 è una copia indipendente grazie allo spread [...incassi1].");
+
+
+
+    </script>
+</body>
+</html>
