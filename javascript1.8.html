@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Andamento dello studente</title>
+</head>
+<body>
+
+    <script>
+      function confrontaMedie(mediaPrimoPeriodo, votiSecondoPeriodo) {
+    if (votiSecondoPeriodo.length === 0) {
+        return "Nessun voto inserito per il secondo periodo.";
+    }
+
+    let somma = 0;
+    for (let i = 0; i < votiSecondoPeriodo.length; i++) {
+        somma += votiSecondoPeriodo[i];
+    }
+
+    let mediaSecondoPeriodo = somma / votiSecondoPeriodo.length;
+
+    if (mediaSecondoPeriodo > mediaPrimoPeriodo) {
+        return "La media del secondo periodo è superiore a quella del primo.";
+    } else if (mediaSecondoPeriodo < mediaPrimoPeriodo) {
+        return "La media del secondo periodo è inferiore a quella del primo.";
+    } else {
+        return "La media del secondo periodo è uguale a quella del primo.";
+    }
+}
+
+// Esempio d'uso:
+let mediaPrimo = 7.5;
+let votiSecondo = [8, 6, 7, 9];
+
+console.log(confrontaMedie(mediaPrimo, votiSecondo));
+
+
+    </script>
+</body>
+</html>
