@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Andamento della classe V.1</title>
+</head>
+<body>
+
+    <script>
+       //funzione che gestisce gli studenti
+       function gestisciStudenti() {
+        //dati statici di esempio
+        const studenti=[
+            {nome:"Anna",  mediaprimo:7,   votiSecondo:[6,5,7,6]},
+            {nome:"Luca",  mediaprimo:5.5,   votiSecondo:[4,5,5]},
+            {nome:"Marco",  mediaprimo:6,   votiSecondo:[6,6,5]},
+            {nome:"Sara",  mediaprimo:7,   votiSecondo:[8,7,9]},
+        ]
+        let contA=0;//media 2° insufficente
+        let contB=0;//insufficente e inferiore
+        let contC=0;//sufficente ma inferiore 
+        let contD=0;//sufficente e superiore
+
+        for(let studente of studenti){
+            const[A,B]=confrontaMedie(studente.mediaPrimo, ...studente.votiSecondo);
+        }
+        for (let studente of studenti) {
+            console.log("Nome:", studente.nome);
+            console.log("Media primo quadrimestre:", studente.mediaPrimo);
+            console.log("Voti secondo quadrimestre:", studente.votiSecondo);
+            console.log("-----------------------------");
+        }
+        confrontaMedie(studente.mediaPrimo, ...studente.votiSecondo);
+       } 
+       function confrontaMedie(mediaPrimoPeriodo, votiSecondoPeriodo) {
+        if (votiSecondoPeriodo.length === 0) {
+            return "Nessun voto inserito per il secondo periodo.";
+        }
+
+        let somma = 0;
+        for (let i = 0; i < votiSecondoPeriodo.length; i++) {
+            somma += votiSecondoPeriodo[i];
+        }
+
+        let mediaSecondoPeriodo = somma / votiSecondoPeriodo.length;
+
+        if (mediaSecondoPeriodo < mediaPrimoPeriodo && mediaSecondoPeriodo<6) {
+            return [0,1];
+        } else if(mediaSecondoPeriodo < mediaPrimoPeriodo && mediaSecondoPeriodo>6) {
+            return [1,1];
+        }else if(mediaSecondoPeriodo<6){
+            return [1,0];
+        }else{
+            return [0,0];
+        }
+       }
+       
+        // Definiamo una funzione che NON ha parametri espliciti,
+        // ma accede agli argomenti tramite l'oggetto predefinito "arguments"
+        function somma() {
+        let totale = 0;
+        for (let i = 0; i < arguments.length; i++) {
+            totale += arguments[i];
+        }
+        return totale;
+        }
+
+        // Abbiamo un array di numeri
+        const numeri = [1, 2, 3, 4, 5];
+
+        // Usiamo l'operatore spread per "espandere" l'array
+        // in singoli argomenti della funzione
+        const risultato = somma(...numeri);
+
+        console.log(risultato); // Output: 15
+        /*
+        somma() non dichiara parametri formali, ma accede a tutti i valori passati grazie all’oggetto arguments, 
+        che è una specie di array contenente tutti gli argomenti effettivi.
+        Con somma(...numeri), l’operatore spread espande l’array in singoli valori:
+        somma(1, 2, 3, 4, 5)
+
+        */
+
+       
+    </script>
+</body>
+</html>
