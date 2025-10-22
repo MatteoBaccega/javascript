@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Flusso di cassa mensile</title>
+</head>
+<body>
+
+<script>
+    function calcola(){
+        const valoreIniziale=parseFloat(prompt("Inserire il valore di cassa iniziale"))
+        const funzione=(prompt("Inserire il tipo si funzione(-,+)"))
+        var ris=0;
+        if(funzione==='+'){
+            ris=somma(valoreIniziale);
+        }else if(funzione==='-'){
+            ris=sottrazione(valoreIniziale);
+        }else{
+            console.log("Errore")
+        }
+        console.log(ris);
+
+
+    }
+    function somma(valoreIniziale){
+        let ris=valoreIniziale+2+3+4;
+        return ris;
+    }
+    function sottrazione(valoreIniziale){
+        let ris=valoreIniziale-1-2-3;
+        return ris;
+    }
+    calcola();
+</script>
+
+</body>
+</html>
