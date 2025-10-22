@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Andamento della classe V.2</title>
+</head>
+<body>
+
+<script>
+    // Funzione principale
+    function gestisciStudenti() {
+        let nStudenti = parseInt(prompt("Inserire il numero degli studenti"));
+        const studenti = [];
+
+        for (let i = 0; i < nStudenti; i++) {
+            let nome = prompt("Inserire il nome dello studente");
+            let mediaPrimo = parseFloat(prompt("Inserire la media del primo quadrimestre dello studente"));
+            let mediaSecondo = parseFloat(prompt("Inserire la media del secondo quadrimestre dello studente"));
+            
+            let oggetto = {
+                nome: nome,
+                mediaPrimo: mediaPrimo,
+                mediaSecondo: mediaSecondo
+            };
+            studenti.push(oggetto);
+        }
+
+        let contA = 0; // media 2° insufficiente
+        let contB = 0; // insufficiente e inferiore
+        let contC = 0; // sufficiente ma inferiore 
+        let contD = 0; // sufficiente e superiore
+
+        for (let studente of studenti) {
+            const [a, b] = confrontaMedie(studente.mediaPrimo, studente.mediaSecondo);
+
+            if (a === 0 && b === 1) contB++;
+            else if (a === 1 && b === 1) contC++;
+            else if (a === 1 && b === 0) contA++;
+            else contD++;
+
+            console.log("Nome:", studente.nome);
+            console.log("Media primo quadrimestre:", studente.mediaPrimo);
+            console.log("Media secondo quadrimestre:", studente.mediaSecondo);
+            console.log("-----------------------------");
+        }
+
+        console.log("Studenti con media 2° insufficiente:", contA);
+        console.log("Studenti insufficiente e inferiore:", contB);
+        console.log("Studenti sufficiente ma inferiore:", contC);
+        console.log("Studenti sufficiente e superiore:", contD);
+    }
+
+    // Funzione che confronta due medie (numeri)
+    function confrontaMedie(mediaPrimoPeriodo, mediaSecondoPeriodo) {
+        if (mediaSecondoPeriodo < mediaPrimoPeriodo && mediaSecondoPeriodo < 6) {
+            return [0, 1]; // insufficiente e peggiorato
+        } else if (mediaSecondoPeriodo < mediaPrimoPeriodo && mediaSecondoPeriodo >= 6) {
+            return [1, 1]; // sufficiente ma peggiorato
+        } else if (mediaSecondoPeriodo < 6) {
+            return [1, 0]; // insufficiente ma migliorato
+        } else {
+            return [0, 0]; // sufficiente e migliorato
+        }
+    }
+
+    // Funzione che somma numeri usando l'oggetto arguments
+    function somma() {
+        let totale = 0;
+        for (let i = 0; i < arguments.length; i++) {
+            totale += arguments[i];
+        }
+        return totale;
+    }
+
+    const numeri = [1, 2, 3, 4, 5];
+    const risultato = somma(...numeri);
+    console.log("Somma:", risultato); // Output: 15
+
+    // Avvia la funzione
+    gestisciStudenti();
+</script>
+
+</body>
+</html>
